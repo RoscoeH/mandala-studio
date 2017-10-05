@@ -20,6 +20,9 @@ Sparky.task('config', () => {
     output: 'dist/$name.js',
     useTypescriptCompiler: true,
     experimentalFeatures: true,
+    alias: {
+      'dat.gui': 'dat.gui/build/dat.gui.js'
+    },
     plugins: [
       EnvPlugin({ NODE_ENV: isProduction ? 'production' : 'development' }),
       SVGPlugin(),

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { observer } from 'mobx-react';
 
 import { CANVAS_SIZE } from './constants';
 import store from './store';
 
-
+@observer
 class App extends Component {
 	render() {
 		return (
@@ -45,6 +46,7 @@ class App extends Component {
 					{range(store.linesOfSymmetry, (index) => {
 						return (
 							<use
+								key={index}
 								href="#mirrored-shapes" 
 								transform={`rotate(${360 / store.linesOfSymmetry * index}, ${CANVAS_SIZE / 2}, ${CANVAS_SIZE / 2})`}
 							/>

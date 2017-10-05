@@ -1,4 +1,10 @@
-
+html,
+body,
+#root,
+.app {
+    height: 100%;
+    overflow: hidden;
+}
 
 body {
     margin: 0;
@@ -10,4 +16,9 @@ body {
 .canvas {
     width: 100%;
     height: 100%;
+}
+
+#dat {
+    position: fixed;
+    top: 0;
 }

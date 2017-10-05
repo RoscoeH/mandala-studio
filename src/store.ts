@@ -1,12 +1,9 @@
-
+import { observable } from 'mobx';
 
 
 export class Store {
-  backgroundColor = '#000000';
-  
-  get linesOfSymmetry(): number {
-    return 7;
-  }
+  @observable backgroundColor = '#000000';
+  @observable linesOfSymmetry = 3;
 }
 
 
