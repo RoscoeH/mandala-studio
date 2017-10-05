@@ -21,6 +21,8 @@ penFolder.add(store, 'penSize')
   .max(20);
 penFolder.open();
 
+gui.add(store, 'clear');
+
 // Place the controls
 const datAnchor = document.getElementById('dat')
 while(datAnchor.firstChild) {

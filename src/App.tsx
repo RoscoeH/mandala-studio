@@ -15,6 +15,9 @@ class App extends Component {
 	private canvasPoint;
 	
 	componentDidMount() {
+		// Disable right click
+		document.addEventListener('contextmenu', event => event.preventDefault());
+
 		document.addEventListener('mouseup', () => {
 			console.log('up');
 			store.finishShape();
@@ -25,12 +28,12 @@ class App extends Component {
 		console.log(this.canvasPoint);
 	}
 	
-	handleCanvasOnMouseDown() {
+	handleCanvasOnMouseDown({ button }) {
 		console.log('down');
 		store.startShape();
 	}
 	
-	handleCanvasOnMouseMove = ({clientX, clientY}): void => {
+	handleCanvasOnMouseMove = ({clientX, clientY}) => {
 		if (store.drawing) {
 			this.canvasPoint.x = clientX;
 			this.canvasPoint.y = clientY;

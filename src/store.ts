@@ -48,6 +48,14 @@ export class Store {
     });
     this.drawing = false;
   }
+
+  clear() {
+    this.shapes = [{
+      points: [],
+      color: this.penColor,
+      weight: this.penSize
+    }]
+  }
 }
 
 
