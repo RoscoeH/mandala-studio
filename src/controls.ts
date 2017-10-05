@@ -8,7 +8,7 @@ gui.add(store, 'linesOfSymmetry')
   .min(1)
   .step(1)
   .max(16);
-
+gui.add(store, 'showGuidelines');
 
 // Place the controls
 const datAnchor = document.getElementById('dat')

@@ -6,5 +6,3 @@ import './index.css';
 import './controls';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-
