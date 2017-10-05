@@ -22,6 +22,8 @@ penFolder.add(store, 'penSize')
 penFolder.open();
 
 gui.add(store, 'clear');
+gui.add(store, 'undo');
+gui.add(store, 'redo');
 
 // Place the controls
 const datAnchor = document.getElementById('dat')

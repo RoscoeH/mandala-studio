@@ -19,17 +19,16 @@ class App extends Component {
 		document.addEventListener('contextmenu', event => event.preventDefault());
 
 		document.addEventListener('mouseup', () => {
-			console.log('up');
-			store.finishShape();
+			if (store.drawing) {
+				store.finishShape();
+			}
 		});
 
 		this.canvasNode = ReactDOM.findDOMNode(this.canvas);
 		this.canvasPoint = this.canvasNode.createSVGPoint();
-		console.log(this.canvasPoint);
 	}
 	
 	handleCanvasOnMouseDown({ button }) {
-		console.log('down');
 		store.startShape();
 	}
 	
