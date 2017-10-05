@@ -49,6 +49,7 @@ class App extends Component {
 				className="app"
 				style={{ backgroundColor: store.backgroundColor }}>
 				<svg
+					id="canvas"
 					className="canvas"
 					ref={canvas => this.canvas = canvas}
 					width={CANVAS_SIZE}

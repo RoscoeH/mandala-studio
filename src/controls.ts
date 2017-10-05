@@ -1,17 +1,17 @@
 import { GUI } from 'dat.gui';
 import store from './store';
-
+import exportCanvas from './export';
 
 const gui = new GUI({ autoPlace: false});
 
-gui.addColor(store, 'backgroundColor');
-
-gui.add(store, 'linesOfSymmetry')
+const canvasFolder = gui.addFolder('Canvas');
+canvasFolder.addColor(store, 'backgroundColor');
+canvasFolder.add(store, 'linesOfSymmetry')
 .min(1)
 .step(1)
 .max(16);
-gui.add(store, 'mirror');
-gui.add(store, 'showGuidelines');
+canvasFolder.add(store, 'mirror');
+canvasFolder.add(store, 'showGuidelines');
 
 const penFolder = gui.addFolder('Pen');
 penFolder.addColor(store, 'penColor');
@@ -19,11 +19,14 @@ penFolder.add(store, 'penSize')
   .min(1)
   .step(1)
   .max(20);
-penFolder.open();
+// penFolder.open();
 
-gui.add(store, 'clear');
-gui.add(store, 'undo');
-gui.add(store, 'redo');
+const editorFolder = gui.addFolder('Editor');
+editorFolder.add(store, 'clear');
+editorFolder.add(store, 'undo');
+editorFolder.add(store, 'redo');
+editorFolder.add({ export: exportCanvas }, 'export');
+// editorFolder.open();
 
 // Place the controls
 const datAnchor = document.getElementById('dat')
