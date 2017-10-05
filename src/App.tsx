@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { observer } from 'mobx-react';
 import * as tinycolor from 'tinycolor2';
 
@@ -53,7 +54,11 @@ class App extends Component {
 		return (
 			<div
 				className="app"
-				style={{ backgroundColor: store.backgroundColor }}>
+				style={{ backgroundColor: store.backgroundColor }}
+			>
+				<Helmet>
+					<meta name="theme-color" content={store.backgroundColor} />
+				</Helmet>
 				<svg
 					id="canvas"
 					className="canvas"
