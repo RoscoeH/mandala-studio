@@ -8,15 +8,23 @@ export interface Point {
 
 export interface Poly {
   points: Point[];
+  color: string;
+  weight: number;
 }
 
 
 export class Store {
   @observable backgroundColor = '#000000';
+  @observable penColor = '#ffffff';
+  @observable penSize = 2;
   @observable linesOfSymmetry = 3;
   @observable showGuidelines = true;
   @observable drawing = false;
-  @observable shapes: Poly[] = [{ points: [] }];
+  @observable shapes: Poly[] = [{
+    points: [],
+    color: this.penColor,
+    weight: this.penSize
+  }];
 
   @computed
   get currentShape(): Poly {
@@ -32,7 +40,11 @@ export class Store {
   }
 
   finishShape() {
-    this.shapes.push({ points: [] });
+    this.shapes.push({
+      points: [],
+      color: this.penColor,
+      weight: this.penSize
+    });
     this.drawing = false;
   }
 }

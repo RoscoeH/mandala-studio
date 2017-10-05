@@ -62,7 +62,8 @@ class App extends Component {
 									return (
 										<polyline
 											points={shape.points.map((point: Point) => `${point.x},${point.y}`).join(' ')}
-											stroke={'#fff'}
+											stroke={shape.color}
+											strokeWidth={shape.weight}
 											fill="none"
 										/>
 									)
@@ -101,7 +102,7 @@ class App extends Component {
 						fill={store.backgroundColor}
 					/>
 
-					{range(store.linesOfSymmetry, (index) => {
+					{store.showGuidelines && range(store.linesOfSymmetry, (index) => {
 						return (
 							<use
 								key={index}
@@ -110,7 +111,7 @@ class App extends Component {
 							/>
 						)
 					})}
-					<use href="#guidecircle" />
+					{store.showGuidelines && <use href="#guidecircle" />}
 
 
 					{range(store.linesOfSymmetry, (index) => {
