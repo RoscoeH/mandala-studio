@@ -35,10 +35,10 @@ Sparky.task('config', () => {
     ]
   });
   // vendor
-  vendor = fuse.bundle('vendor').instructions('~ index.jsx');
+  vendor = fuse.bundle('vendor').instructions('~ index.tsx');
 
   // bundle app
-  app = fuse.bundle('app').instructions('> [index.jsx]');
+  app = fuse.bundle('app').instructions('> [index.tsx]');
 });
 
 Sparky.task('default', ['clean', 'config'], () => {
