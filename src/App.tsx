@@ -29,10 +29,16 @@ class App extends Component {
 	}
 	
 	handleCanvasOnMouseDown({ button }) {
+		console.log('down');
 		store.startShape();
 	}
 	
-	handleCanvasOnMouseMove = ({clientX, clientY}) => {
+	handleCanvasOnMouseMove = ({ touches, clientX, clientY }) => {
+		console.log('move');
+		if (touches.length > 0) {
+			clientX = touches[0].clientX;
+			clientY = touches[0].clientY;
+		}
 		if (store.drawing) {
 			this.canvasPoint.x = clientX;
 			this.canvasPoint.y = clientY;
@@ -57,6 +63,8 @@ class App extends Component {
 					viewBox={`0 0 ${CANVAS_SIZE} ${CANVAS_SIZE}`}
 					onMouseDown={this.handleCanvasOnMouseDown}
 					onMouseMove={this.handleCanvasOnMouseMove}
+					onTouchStart={this.handleCanvasOnMouseDown}
+					onTouchMove={this.handleCanvasOnMouseMove}
 				>
 					<defs>
 						<g id="mirrored-shapes">
