@@ -14,9 +14,10 @@ export interface Poly {
 
 
 export class Store {
+  @observable mirror = false;
   @observable backgroundColor = '#000000';
   @observable penColor = '#ffffff';
-  @observable penSize = 2;
+  @observable penSize = 4;
   @observable linesOfSymmetry = 3;
   @observable showGuidelines = true;
   @observable drawing = false;

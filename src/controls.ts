@@ -3,18 +3,23 @@ import store from './store';
 
 
 const gui = new GUI({ autoPlace: false});
+
 gui.addColor(store, 'backgroundColor');
-gui.addColor(store, 'penColor');
-gui.add(store, 'penSize')
+
+gui.add(store, 'linesOfSymmetry')
+.min(1)
+.step(1)
+.max(16);
+gui.add(store, 'mirror');
+gui.add(store, 'showGuidelines');
+
+const penFolder = gui.addFolder('Pen');
+penFolder.addColor(store, 'penColor');
+penFolder.add(store, 'penSize')
   .min(1)
   .step(1)
   .max(20);
-gui.add(store, 'linesOfSymmetry')
-  .min(1)
-  .step(1)
-  .max(16);
-gui.add(store, 'showGuidelines');
-
+penFolder.open();
 
 // Place the controls
 const datAnchor = document.getElementById('dat')

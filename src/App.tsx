@@ -58,20 +58,25 @@ class App extends Component {
 					<defs>
 						<g id="mirrored-shapes">
 							<g id="shapes">
-								{store.shapes.map((shape: Poly) => {
+								{store.shapes.map((shape: Poly, index: number) => {
 									return (
 										<polyline
+											key={index}
 											points={shape.points.map((point: Point) => `${point.x},${point.y}`).join(' ')}
 											stroke={shape.color}
 											strokeWidth={shape.weight}
 											fill="none"
+											strokeLinejoin="round"
 										/>
 									)
 								})}
 							</g>
 							<use
 								href="#shapes"
-								transform={`matrix(-1, 0, 0, 1, ${CANVAS_SIZE}, 0)`}
+								transform={store.mirror
+									? `matrix(-1, 0, 0, 1, ${CANVAS_SIZE}, 0)`
+									: rotate(180 / store.linesOfSymmetry)
+								}
 							/>
 						</g>
 
@@ -107,7 +112,7 @@ class App extends Component {
 							<use
 								key={index}
 								href="#guideline"
-								transform={rotate(360 / store.linesOfSymmetry * index)}
+								transform={rotate(180 / store.linesOfSymmetry * index)}
 							/>
 						)
 					})}
