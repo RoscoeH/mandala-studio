@@ -149,6 +149,9 @@ class App extends Component {
 						);
 					})}
 				</svg>
+				<div className={`instructions ${store.isCanvasFresh ? '' : 'hide'}`}>
+					&uarr;&nbsp;&nbsp;&nbsp;drag anywhere to draw&nbsp;&nbsp;&nbsp;&uarr;
+				</div>
 			</div>
 		);
 	}

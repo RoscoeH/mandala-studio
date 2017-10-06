@@ -34,6 +34,11 @@ export class Store {
     return this.history[this.historyIndex];
   }
 
+  @computed
+  get isCanvasFresh(): boolean {
+    return this.shapes.length === 0;
+  }
+
   startShape() {
     this.drawing = true;
     this.shapes.push({

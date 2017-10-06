@@ -1,8 +1,15 @@
+import store from './store';
+
 
 export default function exportCanvas() {
+  const guidelines = store.showGuidelines;
+  store.showGuidelines = false;
+
   const canvas = document.getElementById('canvas');
   const serialiser = new XMLSerializer();
   let source = serialiser.serializeToString(canvas);
+
+  store.showGuidelines = guidelines;
 
   // Add name spaces.
   if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
