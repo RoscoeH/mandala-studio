@@ -10,6 +10,7 @@ import store from './store';
 import { Poly, Point } from './store';
 
 
+
 @observer
 class App extends Component {
 	private canvas;

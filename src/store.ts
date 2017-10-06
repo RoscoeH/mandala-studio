@@ -64,11 +64,9 @@ export class Store {
   }
 
   clear() {
-    this.shapes = [{
-      points: [],
-      color: this.penColor,
-      weight: this.penSize
-    }];
+    this.shapes = [];
+    this.history = [ [] ];
+    this.historyIndex = 0;
   }
 
   saveHistory() {
