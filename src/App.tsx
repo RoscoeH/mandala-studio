@@ -36,7 +36,7 @@ class App extends Component {
 	
 	handleCanvasOnMouseMove = ({ touches, clientX, clientY }) => {
 		console.log('move');
-		if (touches.length > 0) {
+		if (touches && touches.length > 0) {
 			clientX = touches[0].clientX;
 			clientY = touches[0].clientY;
 		}
@@ -59,6 +59,7 @@ class App extends Component {
 				<Helmet>
 					<meta name="theme-color" content={store.backgroundColor} />
 				</Helmet>
+				<div className="header">RANGOLI STUDIO</div>
 				<svg
 					id="canvas"
 					className="canvas"

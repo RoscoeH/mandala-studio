@@ -1,0 +1,64 @@
+@import './variables.scss';
+
+html,
+body,
+#root,
+.app {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 11px;
+    color: rgb(238, 238, 238);
+    background-color: $color-primary;
+    width: 100%;
+    height: 27px;
+    line-height: 27px;
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
+#dat {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+
+.dg.main {
+    opacity: 0.85;
+    user-select: none;
+
+    li:not(.folder) {
+        // height: 44px;
+        // line-height: 44px;
+    }
+
+    .folder li.title {
+        background-color: $color-primary;
+    }
+
+    div.close-button {
+        background-color: $color-primary;
+        height: 27px;
+        line-height: 27px;
+    }
+}
+

@@ -2,6 +2,7 @@ const {
   FuseBox,
   EnvPlugin,
   SVGPlugin,
+  SassPlugin,
   CSSPlugin,
   BabelPlugin,
   QuantumPlugin,
@@ -26,7 +27,7 @@ Sparky.task('config', () => {
     plugins: [
       EnvPlugin({ NODE_ENV: isProduction ? 'production' : 'development' }),
       SVGPlugin(),
-      CSSPlugin(),
+      [SassPlugin(), CSSPlugin()],
       WebIndexPlugin({
         template: 'src/index.html'
       }),
