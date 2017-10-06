@@ -9,6 +9,7 @@ import { CANVAS_SIZE, CANVAS_PADDING } from './constants';
 import store from './store';
 import { Poly, Point } from './store';
 
+
 @observer
 class App extends Component {
 	private canvas;
@@ -59,7 +60,9 @@ class App extends Component {
 				<Helmet>
 					<meta name="theme-color" content={store.backgroundColor} />
 				</Helmet>
-				<div className="header">RANGOLI STUDIO</div>
+				<div className="header">
+					Rangoli Studio
+				</div>
 				<svg
 					id="canvas"
 					className="canvas"
