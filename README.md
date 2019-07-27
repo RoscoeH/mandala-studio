@@ -1,8 +1,5 @@
-# Fusebox and react without Babel
-
+# Mandala Studio
 
 ```
-npm install
-node fuse.js
-```
 
+```
