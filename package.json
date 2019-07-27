@@ -11,21 +11,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/dat-gui": "^0.6.3",
+    "@types/dat.gui": "^0.7.3",
     "dat.gui": "^0.6.1",
+    "fuse-box": "^3.7.1",
     "mobx": "^3.3.0",
     "mobx-react": "^4.3.3",
+    "node-sass": "^4.5.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0",
     "reflect-metadata": "^0.1.8",
-    "tinycolor2": "^1.4.1"
-  },
-  "devDependencies": {
-    "fuse-box": "^2.2.3",
-    "node-sass": "^4.5.3",
+    "tinycolor2": "^1.4.1",
     "tslib": "^1.7.1",
-    "typescript": "^2.1.4",
-    "uglify-js": "^3.0.15"
-  }
+    "typescript": "^3.5.3",
+    "uglify-es": "^3.3.9"
+  },
+  "devDependencies": {}
 }
