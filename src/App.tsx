@@ -62,7 +62,7 @@ class App extends Component {
 					<meta name="theme-color" content={store.backgroundColor} />
 				</Helmet>
 				<div className="header">
-					Rangoli Studio
+					Mandala Studio
 				</div>
 				<svg
 					id="canvas"
