@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://mandala.roscoe.dev">
-    <img alt="Gatsby" src="./src/mandala-studio-icon.png" width="64" />
+    <img alt="Mandala Studio" src="./src/mandala-studio-icon.png" width="64" />
   </a>
 </p>
 <h1 align="center">
