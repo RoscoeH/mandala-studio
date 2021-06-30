@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Cats In Cups
+  Mandala Studio
 </h1>
 
 <div align="center">
